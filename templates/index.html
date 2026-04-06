@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 — Flask App on Render</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #e0e0e0;
+        }
+        .container {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            max-width: 520px;
+        }
+        h1 { font-size: 2rem; margin-bottom: 12px; color: #fff; }
+        .env-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 12px;
+        }
+        p { margin-top: 16px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Flask App on Render</h1>
+        <p>SWE40006 — Deployment Portfolio Task 3</p>
+        <span class="env-badge">Environment: {{ environment }}</span>
+        <p>This app was deployed via Git push with auto-deploy enabled.</p>
+    </div>
+</body>
+</html>
