@@ -5,16 +5,22 @@ app = Flask(__name__)
 
 # Read environment variable (configured in Render)
 APP_ENV = os.environ.get("APP_ENV", "development")
+VERSION = "1.0.1"
 
 
 @app.route("/")
 def home():
-    return render_template("index.html", environment=APP_ENV)
+    return render_template("index.html", environment=APP_ENV, version=VERSION)
 
 
 @app.route("/health")
 def health():
-    return {"status": "ok", "environment": APP_ENV}, 200
+    return {"status": "ok", "environment": APP_ENV, "version": VERSION}, 200
+
+
+@app.route("/version")
+def version():
+    return {"version": VERSION}, 200
 
 
 if __name__ == "__main__":
