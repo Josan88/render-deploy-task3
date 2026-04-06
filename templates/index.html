@@ -117,6 +117,9 @@
     <div class="container">
         <h1>📋 Task Manager</h1>
         <p class="subtitle">SWE40006 — Full-Stack App on Render (PostgreSQL)</p>
+        <p class="subtitle" style="margin-top: -24px; font-size: 0.8rem; opacity: 0.4;">
+            Last Refreshed: {{ last_refreshed }}
+        </p>
 
         <form class="add-form" action="/add" method="POST">
             <input type="text" name="title" placeholder="Task title..." required>

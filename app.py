@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from datetime import datetime
+from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
@@ -41,7 +42,9 @@ def home():
     tasks = cur.fetchall()
     cur.close()
     conn.close()
-    return render_template("index.html", tasks=tasks)
+    # Add a timestamp to prove page refresh for Screenshot 18
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return render_template("index.html", tasks=tasks, last_refreshed=now)
 
 
 @app.route("/add", methods=["POST"])
