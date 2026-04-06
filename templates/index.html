@@ -140,7 +140,7 @@
                     <a href="/delete/{{ task.id }}" class="btn-delete">🗑️</a>
                 </div>
             </li>
-            {% empty %}
+            {% else %}
             <li class="empty">No tasks yet — add one above!</li>
             {% endfor %}
         </ul>
